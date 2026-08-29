@@ -1,7 +1,7 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8">  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="금융 도메인 이해를 바탕으로 안정적인 거래 시스템을 설계하는 금융 IT 개발자 조범희의 포트폴리오">
   <title>조범희 | 금융 IT 개발자</title>
@@ -27,5 +27,587 @@
   </main>
   <footer><div class="wrap footer-flex"><strong>Cho Beom Hee</strong><span>© <span id="year"></span> Financial IT Developer</span></div></footer>
   <script>document.getElementById("year").textContent=new Date().getFullYear();</script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조범희 | 금융 IT 개발자 포트폴리오</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --border-color: #334155;
+            --primary: #38bdf8;
+            --primary-hover: #0284c7;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-green: #4ade80;
+            --accent-purple: #c084fc;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        /* Header Card */
+        .header-card {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border: 1px solid var(--border-color);
+            border-top: 4px solid var(--primary);
+            border-radius: 12px;
+            padding: 32px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-name {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+
+        .header-title {
+            font-size: 1.2rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .header-intro {
+            font-size: 1rem;
+            color: #cbd5e1;
+            line-height: 1.7;
+            border-top: 1px solid var(--border-color);
+            padding-top: 16px;
+        }
+
+        /* Section Styling */
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin: 36px 0 16px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        .section-title i {
+            color: var(--primary);
+        }
+
+        /* Core Strengths Grid */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 20px;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            border-color: var(--primary);
+        }
+
+        .card-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card-desc {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* Tech Stack Badges */
+        .tech-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .tech-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tech-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .tech-label {
+            font-weight: 700;
+            width: 110px;
+            color: #cbd5e1;
+            font-size: 0.95rem;
+        }
+
+        .badge {
+            background: #0f172a;
+            color: var(--primary);
+            border: 1px solid #0284c7;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* Table Design */
+        .table-container {
+            overflow-x: auto;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.92rem;
+        }
+
+        th {
+            background: #0f172a;
+            color: var(--primary);
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border-color);
+            font-weight: 700;
+        }
+
+        td {
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--border-color);
+            color: #cbd5e1;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Experience Projects */
+        .project-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 10px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 12px;
+            margin-bottom: 16px;
+        }
+
+        .project-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .project-badge {
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--primary);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .project-meta {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
+        .press-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(2, 132, 199, 0.15);
+            color: #38bdf8;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            text-decoration: none;
+            margin-bottom: 16px;
+            transition: background 0.2s ease;
+        }
+
+        .press-link:hover {
+            background: rgba(2, 132, 199, 0.3);
+        }
+
+        /* Troubleshooting Sub-cards */
+        .tb-box {
+            background: #0f172a;
+            border: 1px solid var(--border-color);
+            border-left: 3px solid var(--primary);
+            border-radius: 8px;
+            padding: 16px;
+            margin-top: 12px;
+        }
+
+        .tb-title {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 0.98rem;
+            margin-bottom: 8px;
+        }
+
+        .tb-sub {
+            font-size: 0.9rem;
+            color: #cbd5e1;
+            margin-bottom: 6px;
+        }
+
+        .tb-sub span {
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .outcome {
+            background: rgba(74, 222, 128, 0.1);
+            border: 1px solid rgba(74, 222, 128, 0.3);
+            color: var(--accent-green);
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            margin-top: 8px;
+        }
+
+        /* Footer Quote */
+        .footer-quote {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 28px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .quote-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .quote-body {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        /* Two column layout for Edu / Cert */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 16px;
+        }
+
+        ul.styled-list {
+            list-style: none;
+        }
+
+        ul.styled-list li {
+            position: relative;
+            padding-left: 18px;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            color: #cbd5e1;
+        }
+
+        ul.styled-list li::before {
+            content: "•";
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.2rem;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header -->
+        <div class="header-card">
+            <div class="header-name">
+                <i class="fa-solid fa-code-branch" style="color: var(--primary);"></i> 조범희
+            </div>
+            <div class="header-title">금융 IT 코어 시스템 및 트랜잭션 최적화 개발자</div>
+            <div class="header-intro">
+                비즈니스 도메인에 대한 이해를 바탕으로 시스템 구조를 설계하며 실거래의 사각지대까지 안정화하는 금융 IT 개발자입니다. 20년 경과 레거시 Modernization부터 대량 배치 처리 및 대외계 트랜잭션 최적화를 수행해왔습니다.
+            </div>
+        </div>
+
+        <!-- Core Strengths -->
+        <div class="section-title"><i class="fa-solid fa-bolt"></i> Core Strengths</div>
+        <div class="grid-3">
+            <div class="card">
+                <div class="card-title"><i class="fa-solid fa-diagram-project"></i> 레거시 현대화</div>
+                <div class="card-desc">20년 경과 절차지향 레거시(C/Pro*C)의 객체지향 Java/Spring 기반 모듈화 및 차세대 전환 성공</div>
+            </div>
+            <div class="card">
+                <div class="card-title"><i class="fa-solid fa-building-columns"></i> 금융 도메인 지식</div>
+                <div class="card-desc">대출 이자 계산(채무자보호법 적용), 수납/반제, 특수채권 관리, 대외계(FEP/KSNET) 트랜잭션 수립</div>
+            </div>
+            <div class="card">
+                <div class="card-title"><i class="fa-solid fa-gauge-high"></i> 성능 & 트랜잭션 최적화</div>
+                <div class="card-desc">대량 배치(Spring Batch, BXM) 병렬 파티셔닝, SQL 튜닝, 대외계 장애 자동 재처리 로직 구축</div>
+            </div>
+        </div>
+
+        <!-- Tech Stacks -->
+        <div class="section-title"><i class="fa-solid fa-layer-group"></i> Tech Stacks</div>
+        <div class="tech-box">
+            <div class="tech-row">
+                <div class="tech-label">Languages</div>
+                <span class="badge">Java</span>
+                <span class="badge">Python</span>
+                <span class="badge">C/C++</span>
+                <span class="badge">JavaScript</span>
+            </div>
+            <div class="tech-row">
+                <div class="tech-label">Frameworks</div>
+                <span class="badge">Spring Boot</span>
+                <span class="badge">Spring Batch</span>
+                <span class="badge">BXM Framework</span>
+                <span class="badge">PyTorch</span>
+                <span class="badge">TensorFlow</span>
+            </div>
+            <div class="tech-row">
+                <div class="tech-label">Databases</div>
+                <span class="badge">Oracle</span>
+                <span class="badge">MySQL</span>
+            </div>
+        </div>
+
+        <!-- Career Journey -->
+        <div class="section-title"><i class="fa-solid fa-briefcase"></i> Career Journey</div>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 20%;">기간</th>
+                        <th style="width: 25%;">회사 / 조직</th>
+                        <th style="width: 18%;">역할</th>
+                        <th>주요 담당 업무</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>2026.06 – 현재</strong></td>
+                        <td>티시스아이티 (생명보험서비스팀)</td>
+                        <td>운영 ITO</td>
+                        <td>흥국생명 기간계 대출 사후관리 코어 시스템 운영 및 실거래 예외 고도화</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2024.12 – 2026.06</strong></td>
+                        <td>티시스아이티 (생명보험서비스팀)</td>
+                        <td>차세대 개발자</td>
+                        <td>흥국생명 차세대 구축 프로젝트(Hi-prime) 대출이체/수납/이자계산 업무 개발</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2024.01 – 2024.04</strong></td>
+                        <td>AIT스토리 (플랫폼 개발팀)</td>
+                        <td>개발자</td>
+                        <td>개인정보보호위원회 합성데이터 생성 참조모델 실증 알고리즘 최적화 및 파이프라인 구축</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2023.09 – 2023.12</strong></td>
+                        <td>AIT스토리 (개발본부)</td>
+                        <td>산학협력 인턴</td>
+                        <td>구강 이미지 AI 합성데이터 생성 모델 연구 및 데이터 검증</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Experience & Projects -->
+        <div class="section-title"><i class="fa-solid fa-rocket"></i> Experience & Projects</div>
+
+        <!-- Project 1 -->
+        <div class="project-card">
+            <div class="project-header">
+                <div class="project-title">1. 흥국생명 기간계 코어 시스템 운영 전환 및 안정화</div>
+                <span class="project-badge">운영 ITO</span>
+            </div>
+            <div class="project-meta">
+                <strong>기간:</strong> 2026.06 ~ 현재 | <strong>소속:</strong> 티시스아이티 | <strong>기술:</strong> Java, BXM Framework, Oracle DB
+            </div>
+            <a href="https://www.insnews.co.kr" target="_blank" class="press-link">
+                <i class="fa-solid fa-newspaper"></i> 흥국생명, 차세대 시스템 ‘Hi-prime’ 오픈… 편의성·효율성 강화 (한국보험신문)
+            </a>
+            
+            <div class="tb-box">
+                <div class="tb-title">📌 자동이체시 실거래 가수금 변동에 따른 0원 수납 예외 처리</div>
+                <div class="tb-sub"><span>문제:</span> 청구와 입금 사이 가수금 변동으로 인한 '0원 수납 상태 오류' 및 '수납 불능' 발생</div>
+                <div class="tb-sub"><span>해결:</span> 가수금 변동 예외 시나리오 전면 재정의, 분기별 예외 처리 로직 구현 및 DB 전수 조사 데이터 정정</div>
+                <div class="outcome">🎯 성과: 실시간 자금 변동 환경에서의 자동이체 수납 정합성 및 신뢰성 100% 확보</div>
+            </div>
+
+            <div class="tb-box">
+                <div class="tb-title">📌 대외계(FEP-KSNET) 인터페이스 오류 발생 시 자동 재처리 기반 마련</div>
+                <div class="tb-sub"><span>문제:</span> FEP-KSNET 통신 장애 시 전문 송수신 실패로 인한 이체 결과 미수신 장애 발생</div>
+                <div class="tb-sub"><span>해결:</span> 전문 송수신 내역과 실제 KSNET 거래 내역을 자동 비교 검증 로직 수립 및 운영 가이드 체계화</div>
+                <div class="outcome">🎯 성과: 무조건적인 ITO 수동 개입 없이 자금 이동 여부에 따른 안전한 자동 검증/재처리 구현</div>
+            </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card">
+            <div class="project-header">
+                <div class="project-title">2. 흥국생명 차세대 시스템 구축 프로젝트 (Hi-prime)</div>
+                <span class="project-badge">차세대 개발자</span>
+            </div>
+            <div class="project-meta">
+                <strong>기간:</strong> 2024.12 ~ 2026.06 | <strong>소속:</strong> 티시스아이티 | <strong>기술:</strong> Java, BXM Framework, Oracle DB
+            </div>
+            <a href="#" class="press-link">
+                <i class="fa-solid fa-newspaper"></i> 800억대 흥국생명 ‘기간계 구축’, 3파전
+            </a>
+
+            <div style="margin-bottom: 12px; font-size: 0.9rem; color: #cbd5e1;">
+                <strong style="color: var(--primary);">⚙️ 주요 개발 및 기여 내용:</strong>
+                <ul class="styled-list" style="margin-top: 6px;">
+                    <li><strong>이자계산 엔진 모듈화:</strong> 상환방법별 채무자보호법 반영 이자 계산 컴포넌트 구현</li>
+                    <li><strong>대출 수납 프로세스 고도화:</strong> 특수채권(충당순서변경, 매각, 변제금 수납) 독립 도메인별 로직 구축</li>
+                    <li><strong>자동이체 대량 배치 아키텍처:</strong> Spring Batch 기반 BXM 프레임워크 병렬 파티셔닝 적용</li>
+                    <li><strong>실시간 이체 공통 모듈:</strong> 대출지원비 지급, 이중입금 반송, 가수 반제 등 연동 모듈 정의</li>
+                </ul>
+            </div>
+
+            <div class="tb-box">
+                <div class="tb-title">📌 20년 된 C언어 절차지향 이자계산 레거시 모듈 현대화</div>
+                <div class="tb-sub"><span>문제:</span> 단일 모듈 내 과도한 Call By Reference 구조로 사이드 이펙트 빈발</div>
+                <div class="tb-sub"><span>해결:</span> 도메인 요구사항 재정의 후 핵심 기능을 독립 메서드로 분리, 조립 가능한 컴포넌트 구조로 재설계</div>
+                <div class="outcome">🎯 성과: 신규 이자 계산 케이스의 유연한 확장성 확보 / 실데이터 6만 건 전수 검증 기준 오차율 0% 달성</div>
+            </div>
+
+            <div class="tb-box">
+                <div class="tb-title">📌 초거대 누적 수납 제어 프로그램 분해 및 DB 트랜잭션 성능 개선</div>
+                <div class="tb-sub"><span>문제:</span> 200개 이상 파라미터 구조체와 10개 이상 테이블 트랜잭션 연동으로 일반수납 1.2초 소요</div>
+                <div class="tb-sub"><span>해결:</span> 도메인별 책임 분리, 처리 전/후 상태 분리, 공통 DB 반영 모듈과 개별 SQL 효율적 분리</div>
+                <div class="outcome">🎯 성과: 일반수납 처리 시간 1.2초 ➡️ 0.6초 (50% 성능 개선) 및 트랜잭션 정합성 확보</div>
+            </div>
+
+            <div class="tb-box">
+                <div class="tb-title">📌 실시간(RT) 처리 트랜잭션 구조 개선 및 배치 SQL 튜닝</div>
+                <div class="tb-sub"><span>문제:</span> 단일 트랜잭션 롤백 리스크 및 루프 내 개별 조회 방식에 따른 대량 데이터 병목</div>
+                <div class="tb-sub"><span>해결:</span> Sub-transaction 도입으로 상태 전이 보장, JOIN 기반 일괄 조회 튜닝 및 해시 파티셔닝 적용</div>
+                <div class="outcome">🎯 성과: 데이터 불일치 원천 차단 / 2만 건 기준 배치 수행 시간을 30초 수준으로 단축</div>
+            </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card">
+            <div class="project-header">
+                <div class="project-title">3. 개인정보보호위원회 / KISA 합성데이터 실증 프로젝트</div>
+                <span class="project-badge">AI 파이프라인</span>
+            </div>
+            <div class="project-meta">
+                <strong>기간:</strong> 2023.09 ~ 2024.04 | <strong>소속:</strong> AIT스토리 | <strong>기술:</strong> Python, PyTorch, TensorFlow
+            </div>
+            <a href="https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?mCode=D010030000" target="_blank" class="press-link">
+                <i class="fa-solid fa-file-pdf"></i> 개인정보보호위원회 합성데이터 생성 참조모델 ('24.5.) 31~41p 등재
+            </a>
+            <div class="tb-box">
+                <div class="tb-sub">• <strong>AI 모델 학습 시간 66% 단축:</strong> StyleGAN 3.0 레이어 최적화 및 파이썬 내부 Bulk 검증으로 1 Epoch당 60분 → 20분 단축</div>
+                <div class="tb-sub">• <strong>품질 및 안전성 검증:</strong> Visual Turing Test 정답률 기준치 충족, 원본 대비 95분위 이상 및 FID 기반 유사성 검증 통과</div>
+            </div>
+        </div>
+
+        <!-- Edu & Cert -->
+        <div class="grid-2">
+            <div>
+                <div class="section-title"><i class="fa-solid fa-graduation-cap"></i> Education</div>
+                <div class="card">
+                    <strong style="color: var(--text-main);">중앙대학교 서울캠퍼스</strong>
+                    <div style="font-size: 0.88rem; color: var(--text-muted);">소프트웨어학부 학사 졸업 (편입, 2022.03 ~ 2024.02)</div>
+                    <strong style="color: var(--text-main); display: block; margin-top: 10px;">순천향대학교</strong>
+                    <div style="font-size: 0.88rem; color: var(--text-muted);">정보통신공학과 수료 (2017.03 ~ 2021.02)</div>
+                </div>
+            </div>
+            <div>
+                <div class="section-title"><i class="fa-solid fa-certificate"></i> Certifications</div>
+                <div class="card">
+                    <ul class="styled-list">
+                        <li><strong>정보처리기사</strong> - 한국산업인력공단</li>
+                        <li><strong>SQLD (SQL 개발자)</strong> - 한국데이터산업진흥원</li>
+                        <li><strong>ADsP (데이터분석준전문가)</strong> - 한국데이터산업진흥원</li>
+                        <li><strong>OPIc</strong> - ACTFL (IM2)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Value -->
+        <div class="footer-quote">
+            <div class="quote-title">“개발자는 코드보다 업무 도메인을 먼저 이해해야 한다.”</div>
+            <div class="quote-body">
+                대규모 금융 차세대 프로젝트와 기간계 운영 업무를 진행하며, 문제 해결의 핵심은 단순한 소스 코드 분석이 아닌 <strong>'비즈니스 도메인에 대한 깊은 이해'</strong>에 있다는 것을 배웠습니다.<br><br>
+                채무자보호법, 연체이자 산정 규칙, 대외계 트랜잭션 등 금융 핵심 업무 규칙을 세밀하게 정의하고 다듬어 20년 된 레거시 C언어 모듈을 오차율 0%의 객체지향 Java 모듈로 성공적으로 전환할 수 있었습니다.<br><br>
+                앞으로도 시스템 전체의 아키텍처 흐름과 실거래의 예외 케이스까지 철저히 분석하여, 안전하고 신뢰할 수 있는 금융 IT 환경을 구축해 나가겠습니다.
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
